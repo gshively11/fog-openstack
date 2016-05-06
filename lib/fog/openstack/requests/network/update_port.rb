@@ -5,7 +5,7 @@ module Fog
         def update_port(port_id, options = {})
           data = { 'port' => {} }
 
-          vanilla_options = [:name, :fixed_ips, :admin_state_up, :device_owner,
+          vanilla_options = [:name, :fixed_ips, :admin_state_up, :device_owner, :allowed_address_pairs,
                              :device_id, :security_groups]
           vanilla_options.select{ |o| options.key?(o) }.each do |key|
             data['port'][key] = options[key]
